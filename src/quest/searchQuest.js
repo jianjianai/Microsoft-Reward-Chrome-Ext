@@ -151,7 +151,7 @@ class SearchQuest {
 
         this._currentSearchCount_++;
 
-        //修改随机时间2分钟~60分钟
+        //修改随机时间2分钟~62分钟
         const item = 60*2 + parseInt(Math.random()*(60*60));
         await sleep(item);
         // await sleep(this._searchIntervalMS);
