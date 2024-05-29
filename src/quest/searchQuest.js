@@ -150,7 +150,11 @@ class SearchQuest {
         }
 
         this._currentSearchCount_++;
-        await sleep(this._searchIntervalMS);
+
+        //修改随机时间2分钟~60分钟
+        const item = 60*2 + parseInt(Math.random()*(60*60));
+        await sleep(item);
+        // await sleep(this._searchIntervalMS);
 
         await this._requestBingSearch();
     }
@@ -160,7 +164,7 @@ class SearchQuest {
             this._googleTrend_.nextPCWord :
             this._googleTrend_.nextMBWord;
 
-        return `https://www.bing.com/search?q=${word}&form=QBRE`;
+        return `https://cn.bing.com/search?q=${word}&form=QBRE`;
     }
 
     _isCurrentSearchCompleted() {
